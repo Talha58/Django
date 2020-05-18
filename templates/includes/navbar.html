@@ -1,0 +1,41 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fized-top bg-inverse">
+    <div class="container"><a class="navbar-brand" href="{% url 'index' %}">Muhammed Talha AVCI</a>
+      <div class="d-flex ml-auto">
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#globalNavbar" aria-controls="globalNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      </div>
+      <div class="collapse navbar-collapse" id="globalNavbar">
+        <form class="form-inline form-navbar my-2 my-lg-0 order-2" action="https://themes.getbootstrap.com/shop/">
+          <input class="form-control" name="s" type="text" placeholder="Search"/>
+        </form>
+        <ul class="navbar-nav mr-auto order-1">
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hakkımda</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <div class="navbar-collapse navbar-top-collapse"><ul id="menu-top-menu" class="nav navbar-nav"><li id="menu-item-601" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-601"><a title="Admin &amp; Dashboard" href="https://themes.getbootstrap.com/product-category/admin-dashboard/">Admin &#038; Dashboard</a></li>
+</ul></div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Hakkımda</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'article:articles' %}">Makaleler</a></li>
+                                        </ul>
+
+
+<ul class="navbar-nav d-none d-lg-flex ml-2 order-3">
+                          
+{% if request.user.is_authenticated %}
+<li class="nav-item"><a class="nav-link" href="{% url 'article:dashboard' %}">Kontrol Paneli</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'user:logout' %}">Çıkış Yap</a></li>
+
+{% else  %}
+<li class="nav-item"><a class="nav-link" href="{% url 'user:login' %}">Giriş Yap</a></li>
+
+{% endif %}
+<li class="nav-item"><a class="nav-link" href="{% url 'user:register' %}">Kayıt Ol</a></li>
+
+          </ul>
+          <ul class="navbar-nav d-lg-none">
+            <li class="nav-item-divider"></li>
+         
+          </ul>
+                    </div>
+    </div>
+  </nav>

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+  
+{% load crispy_forms_tags %}   <!--215.ders-->
+
+<div class="row"> <!--ders 215-->
+   <div class="col-md-6 offset-md-3">
+      <h3>Makale Güncelle</h3>
+      <hr>
+
+      <form method = "post" enctype="multipart/form-data">   <!---post mu get mi ona göre giriş yapacak-->
+         <!--enctype kısmını 225.dersten sonra ekledik bunu eklemediğimde image klasörü olusmadı-->
+
+         {% csrf_token %}
+         {{form.media}}   <!--224.ders ckeditor dahil etmek için-->
+         {{form|crispy}} <!--215.ders-->
+         <br>
+         <button type = "submit" class = "btn btn-danger">Makale Ekle</button>
+      </form>
+      
+   </div>
+ </div>
+ 
+{% endblock body %}

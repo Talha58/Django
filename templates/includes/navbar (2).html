@@ -1,0 +1,31 @@
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container"><a class="navbar-brand" href="/">Muhammed Talha AVCI</a>
+      <div class="d-flex ml-auto">
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#globalNavbar" aria-controls="globalNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      </div>
+      <div class="collapse navbar-collapse" id="globalNavbar">
+        
+        <ul class="navbar-nav mr-auto order-1">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <div class="navbar-collapse navbar-top-collapse"><ul id="menu-top-menu" class="nav navbar-nav">
+</ul></div>
+            </div>
+            </li>
+               <li class="nav-item"><a class="nav-link" href="/about">Hakkımda</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/articles">Makaleler</a></li>
+                                        </ul>
+                        <ul class="navbar-nav d-none d-lg-flex ml-2 order-3">
+                              {% if session["logged_in"] %}
+                              <li class="nav-item"><a class="nav-link" href="/dashboard">Kontrol Paneli</a></li>                              
+
+                              <li class="nav-item"><a class="nav-link" href="/logout">Çıkış Yap</a></li>                              
+                              {% else %}
+                              <li class="nav-item"><a class="nav-link" href="/login">Giriş Yap</a></li>                              
+                              {% endif %}
+
+
+                              <li class="nav-item"><a class="nav-link" href="/register">Kayıt olun</a></li>
+               </ul>
+                    </div>
+    </div>
+  </nav>

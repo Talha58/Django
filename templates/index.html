@@ -1,0 +1,25 @@
+{% extends "layout.html" %} <!---layouttan inherit edeceğiz-->
+
+{% block body %}
+  
+<div class = "jumbotron text-center"> <!---bu şekilde güzel bir arka plan kutucugu koyuyoruz ve yazıyı ortalıyoruz.-->
+    <h3>Anasayfa</h3>
+    <p>Sayfama hoşgeldiniz bu blok django ile oluşturuldu.</p>
+
+</div>
+
+<p>
+
+{% if request.user.is_authenticated %}
+  Giriş Yapılmış,{{request.user.username}}
+
+{% else %}
+  Giriş Yapılmamış
+{% endif %}
+
+
+
+</p>
+
+
+{% endblock body %}

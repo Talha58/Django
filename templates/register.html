@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% load crispy_forms_tags %}   <!--215.ders-->
+
+
+
+<div class="row"> <!--ders 215-->
+   <div class="col-md-6 offset-md-3">
+      <h3>Kayıt Ol</h3>
+      <hr>
+
+      <form method = "post">   <!---post mu get mi ona göre giriş yapacak-->
+
+         {% csrf_token %} <!--csrf saldırılarından korunmak için-->
+         {{form|crispy}} <!--215.ders-->
+         <br>
+         <button type = "submit" class = "btn btn-danger">Giriş Yap</button>
+      </form>
+      
+   </div>
+ </div>
+
+{% endblock %}

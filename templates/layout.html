@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}   <!--ders223 statik dosyalarımızı eklemek için-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <title>Talha AVCI Django Blog</title>
+</head>
+<body>
+
+    {% include "includes/navbar.html" %}
+
+
+    <!--- <br> <br>   br etiketi ile yazıyı biraz daha aşağıdan başlatıyoruz.Veya alttaki gibi margin yazıyoruz-->
+    <!---burada kac pixel aşağıdan başlamak istiyorsak o kadar pixel yazacağız.-->
+    <div style = "margin-top : 60px; margin-bottom : 10px;" class = "container">
+
+        
+    {% if messages %}
+    
+    
+          {% for message in messages %}
+          {% if message.tags == "info" %}
+          <div class=" alert alert-danger">{{ message }}</div>
+         
+          {% else %}
+          <div class=" alert alert-{{ message.tags }}">{{ message }}</div>
+          {% endif %}
+
+          {% endfor %}
+    
+
+    {% endif %}
+
+        {% block body %}
+              
+            {% endblock body %}
+
+
+
+
+    </div>
+        <script src= "{% static 'js/bootstrap.min.js'%}"></script>
+        <script src= "{% static 'js/bootstrap-3.4.1.min.js'%}"></script>
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+</body>
+</html>
