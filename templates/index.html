@@ -1,20 +1,44 @@
 {% extends "layout.html" %} <!---layouttan inherit edeceğiz-->
 
+
+
 {% block body %}
-  
+
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NND4F8K1Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8NND4F8K1Z');
+</script>
+
+
+</head>
+
 <div class = "jumbotron text-center"> <!---bu şekilde güzel bir arka plan kutucugu koyuyoruz ve yazıyı ortalıyoruz.-->
-    <h3>Anasayfa</h3>
-    <p>Sayfama hoşgeldiniz bu blok django ile oluşturuldu.</p>
+   <hr>
+  <h3>Anasayfa</h3>
+    <hr>
+    <p>Selamlar ben Talha, bu blog çalışmalarımı yaptığım en temel Django kodlarıyla oluşturulmuştur.</p>
+
+    <p>Hemen hakkımda kısmını okuyup sonrasında makalelerimdenn devam edebilirsiniz :)
+      Siteme kayıt olabilirsiniz, eğer ki anonim devam etmek istiyorsanız kullanıcı adınızı default birşey yaparak ta kayıt olabilirsiniz. </p>
+
+
 
 </div>
 
 <p>
 
 {% if request.user.is_authenticated %}
-  Giriş Yapılmış,{{request.user.username}}
+  Giriş Yapıldı, Hoşgeldinn {{request.user.username}} :)
 
 {% else %}
-  Giriş Yapılmamış
+  Henüz Giriş Yapmadınız..
 {% endif %}
 
 

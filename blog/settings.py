@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'd$abbpd18*(gg!t_2o0q@8doy9t(fo-b6i-518jv7s-eo*1^11'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['talha588.pythonanywhere.com']
 
 
 # Application definition
@@ -141,5 +141,5 @@ CKEDITOR_CONFIGS = {
 }
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  #ders225
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")  #ders225
 
